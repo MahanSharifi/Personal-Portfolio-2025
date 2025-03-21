@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 const Navigation = () => {
@@ -43,7 +42,7 @@ const Navigation = () => {
           className="text-2xl font-bold purple-gradient cursor-pointer"
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
-          onClick={(e) => handleNavClick(e as any, 'hero')}
+          onClick={(e: React.MouseEvent) => handleNavClick(e as React.MouseEvent<HTMLAnchorElement>, 'hero')}
         >
           MP
         </motion.div>

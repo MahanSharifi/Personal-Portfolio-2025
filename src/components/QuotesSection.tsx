@@ -18,7 +18,7 @@ const Quote: React.FC<QuoteProps> = ({ text, author, delay }) => {
       transition={{ duration: 0.6, delay }}
       viewport={{ once: true }}
     >
-      <div className="absolute text-7xl text-purple-600 opacity-20 -top-4 -left-4">"</div>
+      <div className="absolute text-7xl text-purple-600 opacity-20 -top-4 -left-4">&quot;</div>
       <p className="text-lg text-gray-300 italic mb-4 relative z-10">{text}</p>
       <p className="text-right text-sm text-gray-400">— {author}</p>
     </motion.div>

@@ -10,7 +10,11 @@ interface ProjectItemProps {
   delay: number;
 }
 
+
 const ProjectItem: React.FC<ProjectItemProps> = ({ title, tech, date, description, link, delay }) => {
+  // Convert tech to an array if it's a string
+  const techArray = tech ? (Array.isArray(tech) ? tech : [tech]) : [];
+  
   return (
     <motion.div 
       className="card group"
@@ -31,7 +35,20 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ title, tech, date, descriptio
         <span className="text-sm text-gray-400">{date}</span>
       </div>
       <p className="text-sm text-gray-300 mb-3">{description}</p>
-      <div className="text-xs text-gray-400">{tech}</div>
+      {tech && (
+        <div className="mt-4">
+          <div className="flex flex-wrap gap-2">
+            {techArray.map((item, index) => (
+              <span 
+                key={index} 
+                className="text-xs px-2 py-1 rounded-full bg-[rgba(138,43,226,0.2)] text-[var(--accent)]"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
     </motion.div>
   );
 };
@@ -123,10 +140,10 @@ const ProjectsSection = () => {
             <ProjectItem
               key={index}
               title={project.title}
-              tech={project.tech}
+              tech={Array.isArray(project.tech) ? project.tech.join(", ") : project.tech}
               date={project.date}
-              description={project.description}
-              link={project.link}
+              description={Array.isArray(project.description) ? project.description.join(" ") : project.description}
+              link={project.link || "#"}
               delay={index * 0.1}
             />
           ))}

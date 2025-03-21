@@ -23,14 +23,14 @@ const AboutSection = () => {
           Experience in Platform scalability and optimization development, Internal tools and Product, and low latency python, ultra low latency C++, and ML pipelines.
           </p>
           <p className="text-lg text-gray-300 leading-relaxed">
-          "We live life forwards, but it’s understood backwards" 
+          We live life forwards, but it’s understood backwards 
           
           </p>
           <p className="text-lg text-gray-300 leading-relaxed">
-          "Regression to the mean" 
+          Regression to the mean
           </p>
           <p className="text-lg text-gray-300 leading-relaxed">
-          "The farthest distance in the world is between how it is, and how you thought it would be"          
+          The farthest distance in the world is between how it is, and how you thought it would be          
           </p>
         </motion.div>
         
